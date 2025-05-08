@@ -107,7 +107,6 @@ body{
 }
 
 .window-content-button:hover{
-    transform: scale(1.10);
     color: #FFCC52;
     -webkit-text-stroke: 2px #460809;
 }
