@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Pixelify+Sans:wght@400..700&display=swap');
+/*font-family: "Londrina Solid", sans-serif;
+font-family: "Pixelify Sans", sans-serif;*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    max-width: 300px;
+}
+
+body{
+    background-color: #F69B09;
+    height: 100vh; /* altura da tela inteira */
+    width: 100vw;  /* largura da tela inteira */
+}
+/*HEADER*/
+
+.window-header{
+    font-family: "Londrina Solid", sans-serif;
+    background-color: #F69B09;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.window-header h1{
+    color: #712008;
+    font-size: 2rem;
+    -webkit-text-stroke: 1px #FFFFFF;
+    margin-left: 1rem;
+    align-items: center;
+}
+
+.window-header-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+    margin-right: 1rem;
+    align-items: center;
+}
+
+.minimize-window{
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.minimize-window img{
+    width: 1rem;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.close-window{
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.close-window img{
+    width: 1rem;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+/*MAIN*/
+.window-content{
+    background-color: #FDECC0;
+    min-height: 40vh;
+    width: 90%;
+    max-width: 400px;
+    margin: 5px auto;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*BUTTON*/
+.window-content button{
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+}
+
+.window-content button img{
+    width: 2rem;
+    height: auto;
+}
+
+/*IMAGE YOLK*/
+@keyframes float {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(5px); }
+    100% { transform: translateY(0); }
+}
+
+.img-button{
+    position: absolute;
+    left: 2rem;
+    top: -1rem;
+    width: 10rem;
+    position: relative;
+    animation: float 2s ease-in-out infinite alternate;
+}
+
+span{
+    font-family: "Londrina Solid", sans-serif;
+    color: #712008;
+    -webkit-text-stroke: 1px #FFCC52;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    margin: -0.1rem;
+}
+
+.window-content p{
+    font-family: "Pixelify Sans", sans-serif;
+    color: #BA3A13;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    display: flex;
+    justify-content: center;
+    margin: -0.1rem;
+}

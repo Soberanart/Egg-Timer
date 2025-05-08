@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soft Yolk</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <header>
+        <div class="window-header">
+            <h1> Egg Timmer</h1>
+                <div class="window-header-button">
+                    <button class="minimize-window" onclick="MinimizeWindow()"> 
+                        <img src="Minimize.png" alt="minimize button">
+                    </button>
+                    <button class="close-window" onclick="CloseWindow()">
+                        <img src="Close.png" alt="close button">
+                    </button>
+                </div>    
+        </div>
+    </header>
+    <main>
+        <div class="window-content">
+            <!--SOFT-->
+            <button class="return-index" onclick="window.location.href='index.html'">
+                <img src="Button-return.png" alt="button return">
+            </button>
+
+            <img src="Soft.png" class="img-button"
+            alt="soft egg image">
+            <div id="contador"><span>05:00</span></div>
+            <p>Soft Yolk</p>
+        </div>
+    </main>
+    <footer>
+        <!-- Link do JavaScript -->
+        <script src="script.js">
+        </script>
+    </footer>
+</body>
+</html>

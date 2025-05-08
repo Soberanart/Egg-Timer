@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Pixelify+Sans:wght@400..700&display=swap');
+/*font-family: "Londrina Solid", sans-serif;
+font-family: "Pixelify Sans", sans-serif;*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    max-width: 300px;
+}
+
+body{
+    background-color: #F69B09;
+    height: 100vh; /* altura da tela inteira */
+    width: 100vw;  /* largura da tela inteira */
+}
+/*HEADER*/
+
+.window-header{
+    font-family: "Londrina Solid", sans-serif;
+    background-color: #F69B09;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.window-header h1{
+    color: #712008;
+    font-size: 2rem;
+    -webkit-text-stroke: 1px #FFFFFF;
+    margin-left: 1rem;
+    align-items: center;
+}
+
+.window-header-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+    margin-right: 1rem;
+    align-items: center;
+}
+
+.minimize-window{
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.minimize-window img{
+    width: 1rem;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.close-window{
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.close-window img{
+    width: 1rem;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+/*MAIN*/
+.window-content{
+    background-image: url(Background-final.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-height: 40vh;
+    width: 90%;
+    max-width: 400px;
+    margin: 5px auto;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*BUTTON*/
+.window-content button{
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+}
+
+.window-content button img{
+    width: 2rem;
+    height: auto;
+}
+
+.window-content p{
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 6.5rem;
+    color: #460809;
+    -webkit-text-stroke: 2px #FFCC52;
+    margin: auto;
+    margin-top: 8rem;
+}

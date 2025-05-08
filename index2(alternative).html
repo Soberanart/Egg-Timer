@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Screen</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <div class="window-header">
+            <h1> Egg Timmer</h1>
+                <div class="window-header-button">
+                    <button class="minimize-window" onclick="MinimizeWindow()"> 
+                        <img src="Minimize.png" alt="minimize button">
+                    </button>
+                    <button class="close-window" onclick="CloseWindow()">
+                        <img src="Close.png" alt="close button">
+                    </button>
+                </div>    
+        </div>
+    </header>
+    <main>
+        <div class="window-content">
+            <div class="first-row">
+                <!--SOFT 5MIN-->
+                <button class="button-container" onclick="startTimer(5)">
+                    <img src="Soft.png" class="img-button" alt="soft egg image">
+                    <p class="word"><strong>Soft</strong></p>
+                </button>
+
+                <!--MEDIUN 7MIN-->
+                <button class="button-container" onclick="startTimer(7)">
+                    <img src="Medium.png" class="img-button" alt="medium egg image">
+                    <p class="word"><strong>Mediun</strong></p>
+                </button>
+
+                <!--HARD 10MIN-->
+                <button class="button-container" onclick="startTimer(10)">
+                    <img src="Hard.png" class="img-button" alt="hard egg image">
+                    <p class="word"><strong>Hard</strong></p>
+                </button>
+
+                <!--EXTRA HARD 15MIN-->
+                <button class="button-container" onclick="startTimer(15)">
+                    <img src="Extra Hard.png" class="img-button" alt="extra hard egg image">
+                    <p class="word"><strong>Extra Hard</strong></p>
+                </button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <script>
+            function startTimer(minutes) {
+                localStorage.setItem('tempo', minutes * 60); // salva em segundos
+                window.location.href = 'timer.html'; // página onde o timer roda
+            }
+        </script>
+    </footer>
+</body>
+</html>
