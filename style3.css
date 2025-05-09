@@ -110,7 +110,7 @@ body{
     animation: float 2s ease-in-out infinite alternate;
 }
 
-span{
+.StyleCounter{
     font-family: "Londrina Solid", sans-serif;
     color: #712008;
     -webkit-text-stroke: 1px #FFCC52;

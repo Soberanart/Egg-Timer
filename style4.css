@@ -65,6 +65,7 @@ body{
     height: auto;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 /*MAIN*/
@@ -80,6 +81,7 @@ body{
     border-radius: 12px;
     display: flex;
     flex-direction: column;
+    border: 2px solid #712008;
 }
 
 /*BUTTON*/
@@ -103,4 +105,11 @@ body{
     -webkit-text-stroke: 2px #FFCC52;
     margin: auto;
     margin-top: 8rem;
+    animation: jump 0.6s infinite ease-in-out;
+}
+
+@keyframes jump{
+    0% { transform: scale(1);}
+    50% {transform: scale(1.10);}
+    100% {transform: scale(1);}
 }

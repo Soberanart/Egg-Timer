@@ -1,25 +1,36 @@
-function minimizeWindow() {
-    document.querySelector('.minimize-window').style.display = 'none';
-}
+// Tenta pegar o elemento do timer
+const timerElement = document.getElementById("timer");
 
-function closeWindow() {
-    document.querySelector('.close-window').style.display = 'none';
+if (timerElement) {
+  // Pega o tempo da URL
+  const urlParams = new URLSearchParams(window.location.search);
+  let tempo = parseInt(urlParams.get("tempo"), 10);
 
-let tempo = parseInt(localStorage.getItem('tempo'));
-const display = document.getElementById('contador');
+  // Se for inválido, exibe erro
+  if (isNaN(tempo)) {
+    timerElement.textContent = "Tempo inválido!";
+  } else {
+    // Inicia com o tempo formatado
+    atualizarDisplay(tempo);
 
-const intervalo = setInterval(() => {
-  const minutos = Math.floor(tempo / 60);
-  const segundos = tempo % 60;
+    // Começa a contagem regressiva
+    const intervalo = setInterval(() => {
+      tempo--;
+      atualizarDisplay(tempo);
 
-  display.textContent = 
-    String(minutos).padStart(2, '0') + ':' + 
-    String(segundos).padStart(2, '0');
-
-  if (tempo <= 0) {
-    clearInterval(intervalo);
-    location.href = 'index7.html';
+      //Se eu desistir e quiser que acabe assim
+      if (tempo <= 0) {
+        clearInterval(intervalo);
+        window.location.href = "index7.html";
+      }
+    }, 1000);
   }
+  //
 
-  tempo--;
-}, 1000);
+  // Função para atualizar o timer formatado
+  function atualizarDisplay(segundos) {
+    const min = String(Math.floor(segundos / 60)).padStart(2, '0');
+    const sec = String(segundos % 60).padStart(2, '0');
+    timerElement.textContent = `${min}:${sec}`;
+  }
+}
