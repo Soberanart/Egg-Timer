@@ -1,129 +1,144 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Pixelify+Sans:wght@400..700&display=swap');
-/*font-family: "Londrina Solid", sans-serif;
-font-family: "Pixelify Sans", sans-serif;*/
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    max-width: 300px;
 }
 
-body{
+body {
     background-color: #F69B09;
-    height: 100vh; /* altura da tela inteira */
-    width: 100vw;  /* largura da tela inteira */
-}
-/*HEADER*/
-.window-header{
-    font-family: "Londrina Solid", sans-serif;
-    background-color: #F69B09;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    min-height: 100dvh;
+    font-family: "Pixelify Sans", sans-serif;
+    overflow-x: hidden;
 }
 
-.window-header h1{
-    color: #712008;
-    font-size: 2rem;
-    -webkit-text-stroke: 1px #FFFFFF;
-    margin-left: 1rem;
-    align-items: center;
-}
-
-.window-header-button{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 5px;
-    margin-right: 1rem;
-    align-items: center;
-}
-
-.minimize-window{
-    border: none;
-    background: none;
-    cursor: pointer;
-}
-
-.minimize-window img{
-    width: 1rem;
-    height: auto;
-    display: flex;
-    justify-content: center;
-}
-
-.close-window{
-    border: none;
-    background: none;
-    cursor: pointer;
-}
-
-.close-window img{
-    width: 1rem;
-    height: auto;
-    display: flex;
-    justify-content: center;
-}
-
-/*MAIN*/
-.window-content{
-    background-color: #FDECC0;
-    min-height: 40vh;
-    width: 90%;
-    max-width: 400px;
-    margin: 5px auto;
-    padding: 20px;
-    border-radius: 12px;
+.centralize-for-mobile {
+    min-height: 100dvh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
 }
 
-.window-content button{
+/* HEADER */
+main {
+    background-color: #F69B09;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.window-header {
+    font-family: "Londrina Solid", sans-serif;
+    background-color: #F69B09;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 1rem;
+}
+
+.window-header h1 {
+    color: #712008;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    -webkit-text-stroke: 1px #FFFFFF;
+}
+
+.window-header-button {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* MAIN */
+.window-content {
+    background-color: #FDECC0;
+    width: 90%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Botões */
+.window-content button {
     background-color: #F69B09;
     border-radius: 12px;
-    -webkit-text-stroke: 1px 712008;
-    margin: 0.3rem;
-    padding: 0.3rem;
+    padding: 1.5rem;
+    border: none;
+    font-family: "Londrina Solid", sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: #712008;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
-.first-row{
+.window-content button:hover {
+    background-color: #FFCC52;
+    color: #460809;
+}
+
+/* Linhas de botões */
+.first-row,
+.second-row {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.second-row{
-    display: flex;
-}
-
-.window-content img{
-    width: 5rem;
+/* Imagens */
+.window-content img {
+    width: clamp(5rem, 20vw, 7rem);
     height: auto;
-    display: flex;
-    
+    display: block;
 }
 
+/* Efeito flutuante */
 @keyframes float {
     0%   { transform: translateY(0); }
     50%  { transform: translateY(5px); }
     100% { transform: translateY(0); }
 }
 
-.button-container:hover .img-button{
-    position: relative;
+.button-container:hover .img-button {
     animation: float 2s ease-in-out infinite alternate;
 }
 
-.window-content p{
+/* Texto */
+.window-content p {
     font-family: "Londrina Solid", sans-serif;
     -webkit-text-stroke: 1px #FFFFFF;
     color: #712008;
-    font-size: 1rem;
-    margin-top: 0.3rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    text-align: center;
 }
 
-.button-container:hover .word{
+/* Hover text color */
+.button-container:hover .word {
     -webkit-text-stroke: 1px #712008;
     color: #FFFFFF;
+}
+
+/* Responsividade extra para telas menores */
+@media (max-width: 480px) {
+    .window-content {
+        padding: 1.5rem;
+    }
+
+    .window-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .window-content button {
+        padding: 1rem;
+    }
 }

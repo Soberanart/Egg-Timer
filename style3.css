@@ -1,131 +1,133 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Pixelify+Sans:wght@400..700&display=swap');
-/*font-family: "Londrina Solid", sans-serif;
-font-family: "Pixelify Sans", sans-serif;*/
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    max-width: 300px;
 }
 
-body{
+body {
     background-color: #F69B09;
-    height: 100vh; /* altura da tela inteira */
-    width: 100vw;  /* largura da tela inteira */
+    min-height: 100dvh;
+    font-family: "Pixelify Sans", sans-serif;
+    overflow-x: hidden;
 }
-/*HEADER*/
 
-.window-header{
+.centralize-for-mobile {
+    min-height: 100dvh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* HEADER */
+main {
+    background-color: #F69B09;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.window-header {
     font-family: "Londrina Solid", sans-serif;
     background-color: #F69B09;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    max-width: 600px;
 }
 
-.window-header h1{
+.window-header h1 {
     color: #712008;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
     -webkit-text-stroke: 1px #FFFFFF;
-    margin-left: 1rem;
-    align-items: center;
 }
 
-.window-header-button{
+/* Botão de retorno */
+.return-index {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 5px;
-    margin-right: 1rem;
-    align-items: center;
+    gap: 0.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
 }
 
-.minimize-window{
-    border: none;
-    background: none;
-    cursor: pointer;
-}
-
-.minimize-window img{
-    width: 1rem;
-    height: auto;
-    display: flex;
-    justify-content: center;
-}
-
-.close-window{
-    border: none;
-    background: none;
-    cursor: pointer;
-}
-
-.close-window img{
-    width: 1rem;
-    height: auto;
-    display: flex;
-    justify-content: center;
-}
-
-/*MAIN*/
-.window-content{
+/* CONTEÚDO PRINCIPAL */
+.window-content {
     background-color: #FDECC0;
     min-height: 40vh;
     width: 90%;
     max-width: 400px;
-    margin: 5px auto;
-    padding: 20px;
+    padding: 3rem 2rem;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    margin-top: 2rem;
 }
 
-/*BUTTON*/
-.window-content button{
+/* Botões */
+.window-content button {
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    padding: 0.2rem;
 }
 
-.window-content button img{
-    width: 2rem;
+.window-content button img {
+    width: clamp(2rem, 5vw, 3rem);
     height: auto;
 }
 
-/*IMAGE YOLK*/
+/* Animação da gema */
 @keyframes float {
     0%   { transform: translateY(0); }
-    50%  { transform: translateY(5px); }
+    50%  { transform: translateY(15px); }
     100% { transform: translateY(0); }
 }
 
-.img-button{
-    position: absolute;
-    left: 2rem;
-    top: -1rem;
-    width: 10rem;
-    position: relative;
+.img-button {
+    width: clamp(10rem, 40vw, 16rem);
     animation: float 2s ease-in-out infinite alternate;
 }
 
-.StyleCounter{
+/* Estilo do contador */
+.StyleCounter {
     font-family: "Londrina Solid", sans-serif;
     color: #712008;
     -webkit-text-stroke: 1px #FFCC52;
-    font-size: 3rem;
-    display: flex;
-    justify-content: center;
-    margin: -0.1rem;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    text-align: center;
 }
 
-.window-content p{
+/* Parágrafos */
+.window-content p {
     font-family: "Pixelify Sans", sans-serif;
     color: #BA3A13;
-    font-size: 1rem;
-    margin-top: 0.3rem;
-    display: flex;
-    justify-content: center;
-    margin: -0.1rem;
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    text-align: center;
+    margin: -0.5rem 0;
+}
+
+/* Ajustes em telas muito pequenas */
+@media (max-width: 480px) {
+    .window-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .return-index {
+        top: 0.5rem;
+        right: 0.5rem;
+    }
 }
